@@ -25,49 +25,26 @@ namespace ADTest
         static void Main(string[] args)
         {
             //Sort Section
-            
-            int size1 = 10;
 
-            Console.WriteLine("Unsorted Array");
-            randomIntArray = new int[size1];
-
-            Random rnd = new Random();
-
-            for (int i = 0; i < size1; i++)
-            {
-                randomIntArray[i] = rnd.Next(size1 * 2);
-                Console.Write(randomIntArray[i] + " ");
-            }
-
-            var timeUnit = Timing.TimeUnit.Miliseconds;
-            Timing.Result<Timing.NoReturn> smartResult = null;
-            //Timing.Result<Timing.NoReturn> insertionResult = null;
-            //Timing.Result<Timing.NoReturn> result = null;
-            //Timing.Result<Timing.NoReturn> reverseResult = null;
-
+            insertionSort();
             Console.WriteLine();
             Console.WriteLine();
-            smartResult = Timing.GetTime(() => SmartBubbleSort.SmartBubbleSortArrayList<int>(randomIntArray), timeUnit);
-            //insertionResult = Timing.GetTime(() => InsertionSort.InsertionSortArrayList<int>(randomIntArray), timeUnit);
-            //result = Timing.GetTime(() => BubbleSort.BubbleSortArrayList<int>(randomIntArray), timeUnit);
-            //reverseResult = Timing.GetTime(() => ReverseSort.ReverseSortArrayList<int>(randomIntArray), timeUnit);
-
-            //Console.WriteLine("Time to sort: " + insertionResult.Time.ToString() +" miliseconds");
-            //Console.WriteLine("Time to sort: " + result.Time.ToString() +" miliseconds");
-            //Console.WriteLine("Time to sort: " + reverseResult.Time.ToString() + " miliseconds");
-
+            reverseSort();
             Console.WriteLine();
-            Console.WriteLine("Sorted Array: ");
-            for (int i = 0; i < randomIntArray.Length; i++)
-            {
+            Console.WriteLine();
+            bubbleSort();
+            Console.WriteLine();
+            Console.WriteLine();
+            smartBubbleSort();
+            Console.WriteLine();
+            Console.WriteLine();
+            convertNumbersToLetters();
+            Console.WriteLine();
+            Console.WriteLine();
 
-                Console.Write(randomIntArray[i] + " ");
-            }
-            
 
-            //ArrayList + Collection Base section
 
-            //Arraylist
+            //insertion into Arraylist and time comparison
             Console.WriteLine();
             var timeUnit2 = Timing.TimeUnit.Miliseconds;
             Timing.Result<Timing.NoReturn> result2 = null;
@@ -77,7 +54,7 @@ namespace ADTest
             Console.WriteLine();
             Console.WriteLine("Time to add " + getSize() + " numbers: " + result2.Time.ToString() + " miliseconds");
 
-            //Collection
+            //Adding into a Collection and time comparison
             Console.WriteLine();
             var timeUnit3 = Timing.TimeUnit.Miliseconds;
             Timing.Result<Timing.NoReturn> result3 = null;
@@ -88,7 +65,6 @@ namespace ADTest
             Console.WriteLine("Time to add " + collection.Count()+ " numbers: " + result3.Time.ToString() + " miliseconds");
 
             Console.WriteLine();
-            convertNumbersToLetters();
             getStack();
             getQHash();
 
@@ -98,30 +74,50 @@ namespace ADTest
 
         public static void addToArray()
         {
-
-            Console.WriteLine("Ints added to arraylist: ");
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Arraylist insertion~!");
 
             Random rnd2 = new Random();
-
-            for (int i = 0; i < size; i++)
+            if (size > 20)
             {
-                list.Add(rnd2.Next(size * 2));
-                //Console.Write(list[i] + " ");
+                Console.WriteLine("Ints added to arraylist are not shown because there are too many.");
             }
+            else
+            {
+                Console.WriteLine("Ints added to arraylist printed below: ");
+                for (int i = 0; i < size; i++)
+                {
+                    list.Add(rnd2.Next(size * 2));
+                    Console.Write(list[i] + " ");
+                }
+            }
+           
 
         }
 
         public static void addToCollection()
         {
-            Console.WriteLine("Ints added to collection: ");
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Collection insertion~!");
 
             Random rnd3 = new Random();
-
-            for (int i = 0; i < size; i++)
+            if (size > 20)
             {
-                collection.Add(rnd3.Next(size * 2));
-                //Console.Write(collection[i] + " ");
+                Console.WriteLine("Ints added to arraylist are not shown because there are too many.");
             }
+            else
+            {
+                Console.WriteLine("Ints added to arraylist printed below: ");
+                for (int i = 0; i < size; i++)
+                {
+                    collection.Add(rnd3.Next(size * 2));
+                    //Console.Write(collection[i] + " ");
+                }
+            }
+
+            
         }
 
         public static int getSize()
@@ -133,6 +129,9 @@ namespace ADTest
         {
             int intsize = 25;
 
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Letter sort~!");
             Console.WriteLine("Unsorted Letters");
             randomIntArray1 = new int[intsize];
 
@@ -172,6 +171,151 @@ namespace ADTest
                 Console.Write(let + " ");
             }
 
+        }
+
+        public static void insertionSort()
+        {
+            int size1 = 10;
+
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Insertion Sort~!");
+            Console.WriteLine("Unsorted Array");
+            randomIntArray = new int[size1];
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < size1; i++)
+            {
+                randomIntArray[i] = rnd.Next(size1 * 2);
+                Console.Write(randomIntArray[i] + " ");
+            }
+
+            var timeUnit = Timing.TimeUnit.Miliseconds;
+            Timing.Result<Timing.NoReturn> insertionResult = null;
+
+            Console.WriteLine();
+            Console.WriteLine();
+           
+            insertionResult = Timing.GetTime(() => InsertionSort.InsertionSortArrayList<int>(randomIntArray), timeUnit);
+
+            Console.WriteLine("Time to sort: " + insertionResult.Time.ToString() +" miliseconds");
+
+            Console.WriteLine();
+            Console.WriteLine("Sorted Array: ");
+            for (int i = 0; i < randomIntArray.Length; i++)
+            {
+
+                Console.Write(randomIntArray[i] + " ");
+            }
+        }
+
+        public static void reverseSort()
+        {
+            int size1 = 10;
+
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Reverse sort~!");
+            Console.WriteLine("Unsorted Array");
+            randomIntArray = new int[size1];
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < size1; i++)
+            {
+                randomIntArray[i] = rnd.Next(size1 * 2);
+                Console.Write(randomIntArray[i] + " ");
+            }
+
+            var timeUnit = Timing.TimeUnit.Miliseconds;
+            Timing.Result<Timing.NoReturn> reverseResult = null;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            reverseResult = Timing.GetTime(() => ReverseSort.ReverseSortArrayList<int>(randomIntArray), timeUnit);
+            
+            Console.WriteLine("Time to sort: " + reverseResult.Time.ToString() + " miliseconds");
+
+            Console.WriteLine();
+            Console.WriteLine("Sorted Array: ");
+            for (int i = 0; i < randomIntArray.Length; i++)
+            {
+
+                Console.Write(randomIntArray[i] + " ");
+            }
+        }
+
+        public static void bubbleSort()
+        {
+            int size1 = 10;
+
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Bubble sort~!");
+            Console.WriteLine("Unsorted Array");
+            randomIntArray = new int[size1];
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < size1; i++)
+            {
+                randomIntArray[i] = rnd.Next(size1 * 2);
+                Console.Write(randomIntArray[i] + " ");
+            }
+
+            var timeUnit = Timing.TimeUnit.Miliseconds;
+            Timing.Result<Timing.NoReturn> result = null;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            result = Timing.GetTime(() => BubbleSort.BubbleSortArrayList<int>(randomIntArray), timeUnit);
+
+            Console.WriteLine("Time to sort: " + result.Time.ToString() +" miliseconds");
+
+            Console.WriteLine();
+            Console.WriteLine("Sorted Array: ");
+            for (int i = 0; i < randomIntArray.Length; i++)
+            {
+
+                Console.Write(randomIntArray[i] + " ");
+            }
+        }
+
+        public static void smartBubbleSort()
+        {
+            int size1 = 10;
+
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Smart bubble sort~!");
+            Console.WriteLine("Unsorted Array");
+            randomIntArray = new int[size1];
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < size1; i++)
+            {
+                randomIntArray[i] = rnd.Next(size1 * 2);
+                Console.Write(randomIntArray[i] + " ");
+            }
+
+            var timeUnit = Timing.TimeUnit.Miliseconds;
+            Timing.Result<Timing.NoReturn> smartResult = null;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            smartResult = Timing.GetTime(() => SmartBubbleSort.SmartBubbleSortArrayList<int>(randomIntArray), timeUnit);
+
+            Console.WriteLine("Time to sort: " + smartResult.Time.ToString() +" miliseconds");
+
+            Console.WriteLine();
+            Console.WriteLine("Sorted Array: ");
+            for (int i = 0; i < randomIntArray.Length; i++)
+            {
+
+                Console.Write(randomIntArray[i] + " ");
+            }
         }
 
         public static void getStack()

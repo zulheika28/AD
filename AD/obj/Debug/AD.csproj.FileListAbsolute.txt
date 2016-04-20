@@ -8,3 +8,8 @@ C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\AD\AD\bin\Deb
 C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\AD\AD\obj\Debug\AD.dll
 C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\AD\AD\obj\Debug\AD.pdb
 C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\AD\AD\obj\Debug\AD.csprojResolveAssemblyReference.cache
+C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\Final Algorythms\AD\AD\bin\Debug\AD.dll
+C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\Final Algorythms\AD\AD\bin\Debug\AD.pdb
+C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\Final Algorythms\AD\AD\obj\Debug\AD.csprojResolveAssemblyReference.cache
+C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\Final Algorythms\AD\AD\obj\Debug\AD.dll
+C:\Users\zulheika\Documents\School Docs\Year 2\Period 3\Algorythms\Final Algorythms\AD\AD\obj\Debug\AD.pdb

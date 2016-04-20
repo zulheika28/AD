@@ -50,11 +50,15 @@ namespace AD.Collecction
 
         public void ShowDistrib()
         {
+            Console.WriteLine();
+            Console.WriteLine("**************************************!");
+            Console.WriteLine("Below is the Quadratic Hash insertion~!");
+
             //showing the valuesin the hashed array that are not empty
             for (int i = 0; i <= size; i++)
                 if (hash1[i] != 0)
                 {
-                    Console.WriteLine(i + " " + hash1[i]);
+                    Console.WriteLine("Key: "+ i + " Value: " + hash1[i]);
                 }     
         }
     }
