@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BucketHash.cs" />
+    <Compile Include="circularlist.cs" />
     <Compile Include="Collecction\BinaryTree.cs" />
     <Compile Include="Collecction\QuadraticHash.cs" />
     <Compile Include="Collecction\TreeNode.cs" />
+    <Compile Include="iterator.cs" />
+    <Compile Include="LinkLit.cs" />
+    <Compile Include="liStiterator.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="queue.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\ReverseSort.cs" />

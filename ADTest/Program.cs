@@ -90,6 +90,31 @@ namespace ADTest
             //carry out the quadratic hash
             getQHash();
 
+
+            //bucket hash
+            Console.WriteLine("Bucket Hash");
+            BucketHash.bucket();
+            Console.WriteLine("");
+            Console.ReadKey();
+
+            //queue
+            Console.WriteLine("Queue");
+            queue.queues();
+            Console.WriteLine("");
+
+            //iterator
+            Console.WriteLine("iterator");
+            iteratormethod();
+
+            //circular list
+            Console.WriteLine("");
+            Console.WriteLine("Circular list");
+            circularlist();
+
+            //Circular linked list
+            Console.WriteLine("");
+            circularlinklit();
+
             Console.ReadLine();
             Console.ReadKey();
         }
@@ -410,6 +435,109 @@ namespace ADTest
         {
             QuadraticHash qHash = new QuadraticHash();
             
+        }
+
+        public static void iteratormethod()
+        {
+            iterator<int> iterators = new iterator<int>();
+
+            // Adding numbers to the iterator stack
+            for (int num = 0; num <= 9; num++)
+            {
+                iterators.Push(num);
+            }
+
+            //TopToBottom returns IEnumerable(Of Integer).
+            foreach (int num in iterators.TopBottom)
+            {
+                Console.Write("{0} ", num);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            // Output: 9 8 7 6 5 4 3 2 1 0
+
+            foreach (int num in iterators.Bottomtothetop)
+            {
+                Console.Write("{0} ", num);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            // Output: 0 1 2 3 4 5 6 7 8 9
+
+            Console.ReadKey();
+        }
+
+        public static void circularlist()
+        {
+            circularlist<int> cl = new circularlist<int>(10);
+
+            //loops the numbers 8 times to display the 8 numbers
+            for (int i = 0; i < 10; i++)
+            {
+                cl.Value = i;
+                //goes onto the next number
+                cl.Next();
+
+            }
+            //loops the numbers out to print them out
+            foreach (int n in cl)
+            {
+                Console.WriteLine(n);
+            }
+
+            Console.ReadKey();
+        }
+
+        public static void circularlinklit()
+        {
+            //Connection to the the linked list class 
+            LinkLit LinkList = new LinkLit();
+            //connection to the iterator class, whilst inserting the List from linked list
+            liStiterator Lititerator = new liStiterator(LinkList);
+
+            //string value for the inserting fruit before and after
+            string item;
+
+            //inserting in fruit/veg after
+            Lititerator.InsertAfter("Apple");
+            Lititerator.InsertAfter("Strawberry");
+            Lititerator.InsertAfter("Asparagus");
+
+            //insertings before Asparagus
+            Lititerator.InsertBefore("Broccoli");
+
+            //inserts after Asparagus
+            Lititerator.InsertAfter("Endive");
+
+            //Inserts before Endive
+            Lititerator.InsertBefore("Fig");
+            Lititerator.InsertBefore("Lemon");
+
+            Console.WriteLine("CircularLinkedList");
+            //Show complete list
+            Console.WriteLine();
+            Console.WriteLine("Complete list:");
+            LinkList.ShowListofItem();
+            Console.ReadKey();
+
+            //Insert after
+            Console.WriteLine();
+            Console.WriteLine("Insert pear after:");
+            item = "Pear //Add After";
+            Lititerator.InsertAfter(item);
+            //shows list with item added after
+            LinkList.ShowListofItem();
+            Console.ReadKey();
+
+            //Insert before
+            Console.WriteLine();
+            Console.WriteLine("Insert pumpkin before:");
+            item = "Pumpkin //Add Before";
+            Lititerator.InsertBefore(item);
+            //shows list with item added before
+            LinkList.ShowListofItem();
+            Console.ReadKey();
+
         }
     }
 }
