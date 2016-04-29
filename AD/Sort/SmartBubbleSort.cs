@@ -34,8 +34,10 @@ namespace AD.Sort
 
         public static void sortedCheck(int[] arr)
         {
+            //iterate through the arr
             for (int i = 1; i < arr.Length; i++)
             {
+                //check if the whole array to see if everything is ascending order.
                 if (arr[i - 1] > arr[i])
                 {
                     sorted = false;

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Collecction\BinaryTree.cs" />
     <Compile Include="Collecction\QuadraticHash.cs" />
+    <Compile Include="Collecction\TreeNode.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\ReverseSort.cs" />

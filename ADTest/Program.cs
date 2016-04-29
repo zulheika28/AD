@@ -15,10 +15,12 @@ namespace ADTest
     class Program
     {
         private static ArrayList list = new ArrayList();
+        //size of the arraylist and collection
         private static int size= 1000000;
 
         private static Collection<int> collection = new Collection<int>();
 
+        //Random int arrays for entering into arraylist and collection
         private static int[] randomIntArray;
         private static int[] randomIntArray1;
 
@@ -47,6 +49,7 @@ namespace ADTest
             //insertion into Arraylist and time comparison
             Console.WriteLine();
             var timeUnit2 = Timing.TimeUnit.Miliseconds;
+            //calculate time to carry out request
             Timing.Result<Timing.NoReturn> result2 = null;
 
             result2 = Timing.GetTime(() => addToArray(), timeUnit2);
@@ -56,6 +59,7 @@ namespace ADTest
 
             //Adding into a Collection and time comparison
             Console.WriteLine();
+            //calculate time to carry out request
             var timeUnit3 = Timing.TimeUnit.Miliseconds;
             Timing.Result<Timing.NoReturn> result3 = null;
 
@@ -65,7 +69,25 @@ namespace ADTest
             Console.WriteLine("Time to add " + collection.Count()+ " numbers: " + result3.Time.ToString() + " miliseconds");
 
             Console.WriteLine();
+
             getStack();
+           
+
+            // Binary Tree
+            BinaryTree b = new BinaryTree();
+
+            //insert the values
+            b.insert(48);
+            b.insert(10);
+            b.insert(16);
+            b.insert(23);
+            b.insert(51);
+            b.insert(3);
+
+            //display the values
+            b.display();
+
+            //carry out the quadratic hash
             getQHash();
 
             Console.ReadLine();
@@ -78,14 +100,19 @@ namespace ADTest
             Console.WriteLine("**************************************!");
             Console.WriteLine("Below is the Arraylist insertion~!");
 
+            //create random ints
             Random rnd2 = new Random();
+
+            //check if there are too many ints to be shown on console
             if (size > 20)
             {
                 Console.WriteLine("Ints added to arraylist are not shown because there are too many.");
             }
+            //if there are not too many, they can be shown
             else
             {
                 Console.WriteLine("Ints added to arraylist printed below: ");
+                //iterate through array
                 for (int i = 0; i < size; i++)
                 {
                     list.Add(rnd2.Next(size * 2));
@@ -102,14 +129,18 @@ namespace ADTest
             Console.WriteLine("**************************************!");
             Console.WriteLine("Below is the Collection insertion~!");
 
+            //create random ints for the collection
             Random rnd3 = new Random();
             if (size > 20)
             {
+                //if the size is too large do not show
                 Console.WriteLine("Ints added to arraylist are not shown because there are too many.");
             }
+            //if its a small amount show them
             else
             {
                 Console.WriteLine("Ints added to arraylist printed below: ");
+                //iterate through collection
                 for (int i = 0; i < size; i++)
                 {
                     collection.Add(rnd3.Next(size * 2));
@@ -122,6 +153,7 @@ namespace ADTest
 
         public static int getSize()
         {
+            //show the size of the array
             return size;
         }
 
@@ -143,12 +175,15 @@ namespace ADTest
                 //Console.Write(randomIntArray1[i] + " ");
             }
             Console.WriteLine();
+            //iterate through the array
             for (int i = 0; i < randomIntArray1.Length; i++)
             {
+                //convert the number values into letters
                 char let = (char)('a' + randomIntArray1[i]);
                 Console.Write(let + " ");
             }
 
+            //calculate time to carry out request
             var timeUnit = Timing.TimeUnit.Miliseconds;
             Timing.Result<Timing.NoReturn> result10 = null;
 
@@ -184,16 +219,19 @@ namespace ADTest
             randomIntArray = new int[size1];
 
             Random rnd = new Random();
-
+            //iterate through array
             for (int i = 0; i < size1; i++)
             {
+                //multiply the random number by 2 to get more variety
                 randomIntArray[i] = rnd.Next(size1 * 2);
                 Console.Write(randomIntArray[i] + " ");
             }
 
+            //calculate time to carry out request
             var timeUnit = Timing.TimeUnit.Miliseconds;
             Timing.Result<Timing.NoReturn> insertionResult = null;
 
+            //create space
             Console.WriteLine();
             Console.WriteLine();
            
@@ -203,9 +241,10 @@ namespace ADTest
 
             Console.WriteLine();
             Console.WriteLine("Sorted Array: ");
+            //iterate through sorted array
             for (int i = 0; i < randomIntArray.Length; i++)
             {
-
+                //show the sorted array
                 Console.Write(randomIntArray[i] + " ");
             }
         }

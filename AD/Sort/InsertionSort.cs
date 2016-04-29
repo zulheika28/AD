@@ -11,12 +11,13 @@ namespace AD.Sort
 
         public static void InsertionSortArrayList<T>(this T[] arr) where T : IComparable<T>
         {
-           
+           //iterate through given array
             for (int i = 1; i < arr.Length; i++)
             {
                 int j = i;
                 while (j > 0)
                 {
+                    //swap elements 
                     if(arr[j].CompareTo(arr[j-1]) > 0)
                     {
                         T temp = arr[j - 1];

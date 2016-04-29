@@ -8,12 +8,15 @@ namespace AD.Collecction
 {
     public class QuadraticHash
     {
-
+        //using a prime gives better results
         public int size = 1007;
-        public int intValue;
+        //the array containing values
         public int[] nums;
+        //the array where the values will be hashed
         public int[] hash1;
+        //the ints that will be hashed
         int hashed;
+        //the position to which they will be hashed
         int finalHashValue;
 
         public QuadraticHash()
@@ -30,7 +33,8 @@ namespace AD.Collecction
         }
 
         public int quadraticHashing(int s)
-        {            
+        {       
+            //calculate the position to where value will be hashed by moduling the value(s) with the size of the array     
             int total = s % size;
             return total;
         }
@@ -54,12 +58,16 @@ namespace AD.Collecction
             Console.WriteLine("**************************************!");
             Console.WriteLine("Below is the Quadratic Hash insertion~!");
 
-            //showing the valuesin the hashed array that are not empty
-            for (int i = 0; i <= size; i++)
-                if (hash1[i] != 0)
+            //Iterating through the values in the hash
+            for (int i = 0; i <= size-1; i++)
+            {
+                //only show the key and values of the vales that are not 0
+                if (!(hash1[i] == 0))
                 {
-                    Console.WriteLine("Key: "+ i + " Value: " + hash1[i]);
-                }     
+                    Console.WriteLine("Key: " + i + " Value: " + hash1[i]);
+                }
+                
+            }
         }
     }
 }
